@@ -1,0 +1,61 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">我的</view>
+</cu-custom>
+
+ 
+  <view class="flex justify-center" style="padding-top:60rpx">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'> 获取头像昵称 </button>
+    <block wx:else>
+      <view class='text-center'>
+        <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
+        <view class="padding">{{userInfo.nickName}}</view>
+      </view>
+    </block>
+  </view> 
+  
+<!--
+<view class="text-center margin-top">
+  <text class="text-grey text-xl">{{motto}}</text>
+</view>
+-->
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin-top:0"> 
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/wallet/manage/index" hover-class="none">
+         <image src="/static/img/管理钱包.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">管理钱包</text>
+      </navigator>
+    </view>
+     <view class="cu-item arrow">
+      <navigator class="content" url="/pages/me/trans/trans" hover-class="none">
+        <text class="cuIcon-formfill text-green"></text>
+        <text class="text-grey">账户明细</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow " bindtap="showModal" data-target="aboutLili">
+      <view class="content">
+        <image src="/static/img/logo.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">关于</text>
+      </view>
+    </view>  
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey" bindtap="showModal" data-target="advice">意见反馈</text>
+      </button>
+    </view> 
+  </view>
+  <view class="cu-tabbar-height"></view>
+
+  <view class="cu-modal {{modalName=='aboutLili'?'show':''}}">
+    <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">关于</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      泥猜~
+    </view>
+  </view>
+</view>

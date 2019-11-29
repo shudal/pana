@@ -1,0 +1,21 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">我的钱包</view>
+</cu-custom>
+
+<view class="cu-card">
+  <view class="cu-item" wx:for="{{ walletList }}">
+    <view class="cu-list menu-avatar"> 
+    <view class="cu-item"  style="border-radius:20px">
+      <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+      <view class="content flex-sub">
+        <view class="text-grey">{{item.name}}</view> 
+      </view>
+      <view class="action" style="width:320rpx"> 
+        <view class="cu-tag round bg-grey text-xl">{{item.amount}}</view>
+        <view class="text-grey text-sm">{{item.rate}} CNY</view>
+      </view>
+    </view> 
+</view>
+  </view>
+</view>
+
